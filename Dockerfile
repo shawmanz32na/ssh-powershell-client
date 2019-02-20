@@ -5,7 +5,7 @@ RUN apt update && \
     apt clean && \
     rm -rf /var/lib/apt/lists/* && \
     mkdir -p ~/.ssh && \
-    echo -e "Host *\n\tStrictHostKeyChecking no\n\tForwardAgent yes\n\n" > ~/.ssh/config
+    echo "Host *\\n\\tStrictHostKeyChecking no\\n\\tForwardAgent yes\\n\\n" > ~/.ssh/config
 
 ADD ./entrypoint.sh /
 RUN chmod +x /entrypoint.sh
